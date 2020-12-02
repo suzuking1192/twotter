@@ -1,49 +1,18 @@
 <template>
   <div id="app">
-    {{user.username}}-{{fullName}}
-    <strong>Followers:</strong>{{followers}}
-    <button @click='followUser'>
-      Follow
-    </button>
+    <UserProfile/>
   </div>
 
 </template>
 
 <script>
+import UserProfile from "./components/UserProfile";
 
 export default {
-  name: 'App',
-  data(){
-  return{
-    followers: 0,
-    user:{
-      id:1,
-      username:"_yuto",
-      firstname:"Yuto",
-      lastname:"Suzuki",
-      email:"mokkumokku99@gmail.com",
-      isAdmin: true
-      }
-    }
-  },
-  computed:{
-    fullName(){
-        return `${this.user.firstname} ${this.user.lastname}`;
-
-    }
-
-  },
-  methods:{
-    followUser(){
-       this.followers++;
-    }
-  },
-
-  mounted(){
-    this.followUser();
-
-  }
+  name: "App",
+  components:{UserProfile}
 }
+
 </script>
 
 <style>
