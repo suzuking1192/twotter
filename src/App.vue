@@ -2,8 +2,8 @@
   <div id="app">
     {{user.username}}-{{fullName}}
     <strong>Followers:</strong>{{followers}}
-    <button>
-      Follows
+    <button @click='followUser'>
+      Follow
     </button>
   </div>
 
@@ -33,10 +33,15 @@ export default {
     }
 
   },
-  method:{
-    followers(){
-      this.followers++
+  methods:{
+    followUser(){
+       this.followers++;
     }
+  },
+
+  mounted(){
+    this.followUser();
+
   }
 }
 </script>
